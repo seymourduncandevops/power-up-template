@@ -1,5 +1,6 @@
 /* global TrelloPowerUp */
 
+var Promise = TrelloPowerUp.Promise;
 var t = TrelloPowerUp.iframe();
 
 // you can access arguments passed to your iframe like so
@@ -10,6 +11,20 @@ t.render(function(){
   // and then called each time something changes that
   // you might want to react to, such as new data being
   // stored with t.set()
+	
+  return Promise.all([
+    // t.get('board', 'shared', 'fruit'),
+    t.get('board', 'private', 'apiKey')
+  ])
+  .spread(function(savedApiKey){
+    if(savedApiKey && /[a-z]+/.test(savedApiKey)){
+			$("#display-apiKey").text(savedApiKey);
+    }
+  })
+  .then(function(){
+    t.sizeTo('#content')
+    .done();
+  })
 });
 
 // close overlay if user clicks outside our content

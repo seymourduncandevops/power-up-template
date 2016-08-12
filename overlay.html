@@ -2,12 +2,14 @@
   <head>
     <link rel="stylesheet" href="https://trello.com/power-ups/power-up.css">
     <link rel="stylesheet" href="./css/overlay.css">
+		<script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
     <script src="https://trello.com/power-ups/power-up.min.js"></script>
   </head>
   <body>
     <div id="content">
       <h2>Tips for using t.overlay()</h2>
       <hr/>
+			<strong id="display-apiKey"></strong>
       <ol>
         <li>You should only call t.overlay() as a response to a user action, such as clicking a button.</li>
         <li>Try to use t.popup() when possible instead of t.overlay()as it helps to better maintain context.</li>
