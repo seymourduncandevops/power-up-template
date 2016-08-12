@@ -25,7 +25,7 @@ t.render(function(){
   })
 });
 
-document.getElementById('tmwrk-save').addEventListener('click', function(){
+document.getElementById('save').addEventListener('click', function(){
   return t.set('board', 'private', 'vegetable', vegetableSelector.value)
   .then(function(){
     return t.set('board', 'shared', 'fruit', fruitSelector.value);
